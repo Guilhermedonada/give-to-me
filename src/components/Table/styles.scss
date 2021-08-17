@@ -1,0 +1,27 @@
+.table {
+    margin-top: 2rem;
+    text-align: left;
+    border-collapse: collapse; //permite o border bottom do tr
+
+    th, td {
+        padding: 1rem;    
+        text-align: center;    
+
+        button {
+            margin-top: 0rem;
+            padding: 0.2rem 1rem;
+        }
+    }
+
+    tr {
+        border-bottom: 1px solid var(--border);
+
+        &.done {
+            background: var(--green);
+        }
+    }
+
+    td *{
+        vertical-align:middle;
+    }
+}

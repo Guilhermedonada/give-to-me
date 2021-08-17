@@ -1,0 +1,70 @@
+.create_list_area {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--back);
+    align-items: center;
+
+    header {
+        height: var(--height-header);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem;
+        box-shadow: 1px 2px 5px var(--shadow);
+        background: #fff;
+        position: fixed;    
+    }
+    
+    main {
+        display: flex;
+        width: 100%;
+        min-height: 100%;
+        max-width: var(--max-width-lg);
+        flex-grow: 1;
+        background: var(--back);
+        padding: calc(var(--height-header)  + 4rem) 0;
+    
+        section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            background: #fff;
+            padding: 4rem 8rem;
+    
+        }
+    }
+    
+    form {
+        display: flex;
+        gap: 4rem;
+        width: 100%;
+    }
+    
+    .itens {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2rem;
+    
+        h1 {
+            font-size: 1.5rem;
+        }
+    
+        p {
+            margin-top: 3rem;
+            font-size: 1.5rem;
+            color: var(--gray-200);
+        }
+    }
+
+}
+
+
+
+.form-create {
+    width: 400px;
+    padding: 2rem;
+}
+

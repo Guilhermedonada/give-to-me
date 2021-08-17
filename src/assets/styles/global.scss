@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --blue: #009DCF;
+    --pink: #CF0089;
+
+    --green: #DEFFE7;
+
+    --gray-200: #AFAFAF;
+
+    --shadow-1: #b9b9b9;
+    --shadow: #e4e4e4; //usada nos buttons
+
+    --back: #F3F3F3;
+
+    --border: #DDDDDD;
+
+    --height-header: 4rem;
+    --max-width-lg: 1400px;
+}
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+}
+
+
+
+.form-input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    label {
+        font-size: 1rem;
+    }
+    
+    input {
+        padding: 1rem;
+        margin-bottom: 1rem;
+        font-size: 1rem;
+        border: 1px solid var(--border);
+        border-radius: 4px;
+    }
+}
+
+
+.d-none {
+    display: none;
+}
+
+.close-modal {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}
+
+.sign-out {
+    padding-right: 2rem;
+    padding-left: 2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    background: #fff;
+    color: var(--blue);
+    border: 2px solid var(--blue);
+    border-radius: 4px;
+
+    &:hover {
+        opacity: 0.5;
+    }
+}

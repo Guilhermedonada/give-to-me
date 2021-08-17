@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Switch} from 'react-router-dom'
+
+import {Home} from './pages/Home/Home'
+import {Lists} from './pages/Lists/Lists'
+import {CreateList} from './pages/CreateList/CreateList'
+import {List} from './pages/List/List'
+
+
+import { AuthContextProvider } from './contexts/AuthContext'
+
+import './assets/styles/global.scss'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <AuthContextProvider>
+          <Switch>
+            <Route path="/" exact component={Home} /> 
+            <Route path="/lists" component={Lists} /> 
+            <Route path="/createlist/:id" component={CreateList} /> 
+            <Route path="/list/:id" component={List} /> 
+          </Switch>
+        </AuthContextProvider>
+      </BrowserRouter>
   );
 }
 

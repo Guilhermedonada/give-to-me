@@ -1,0 +1,55 @@
+.list_area {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    background: var(--back);
+
+    header {
+        height: var(--height-header);
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0.5rem;
+        box-shadow: 1px 2px 5px var(--shadow);
+        background: #fff;      
+    }
+
+    main {
+        display: flex;
+        width: 100%;
+        max-width: var(--max-width-lg);
+        flex-grow: 1;
+        padding: calc(var(--height-header)  + 4rem) 0;
+
+        section {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background: #fff;
+            padding: 4rem;            
+
+            h1 {
+                color: var(--gray-200);
+                font-size: 3rem;
+            }
+
+            .my_lists_area {
+
+                label {
+                    font-weight: 700;
+                    font-size: 1.5rem;
+                }
+
+                .my_lists {
+                    li {
+                        padding: 0.5rem;
+                    }
+                }
+            }
+         
+        }
+    }
+}
