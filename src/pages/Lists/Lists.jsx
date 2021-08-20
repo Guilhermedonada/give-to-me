@@ -11,17 +11,18 @@ import { AuthContext } from '../../contexts/AuthContext'
 
 export function Lists(){
 
-    const { user, signInWithGoogle, signOut } = useContext(AuthContext)
+    const { user, signInWithGoogle, stillLogged, signOut } = useContext(AuthContext)
     const history = useHistory()
 
     const [lists, setLists] = useState()
 
     useEffect(() => {
        
-        if(!user){
-            console.log('aqui')
-            history.push('/')
-        }
+        // if(!user){
+        //     console.log('aqui')
+        //     history.push('/')
+        // }
+        stillLogged()
 
         getListFromUser()       
         

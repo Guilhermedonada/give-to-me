@@ -23,7 +23,7 @@ const customStyles = {
   };
 
 export function CreateList(){
-    const { user, signInWithGoogle, signOut } = useContext(AuthContext)
+    const { user, signInWithGoogle, stillLogged, signOut } = useContext(AuthContext)
     const history = useHistory()
 
     const params = useParams()
@@ -33,6 +33,9 @@ export function CreateList(){
     const [list, setList] = useState()
 
     useEffect(() => {
+        
+        stillLogged()
+
         if(listId){
             getList()
         }

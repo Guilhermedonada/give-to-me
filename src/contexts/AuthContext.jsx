@@ -10,14 +10,18 @@ export function AuthContextProvider(props){
     const history = useHistory()
     const [user, setUser] = useState()
 
-    useEffect(async () => {
-       
+    // useEffect(async () => {
         
+
+
+    // }, [])
+
+
+    const stillLogged = async () => {
         const unsubscribre = await firebase.auth().onAuthStateChanged(user => {
-            console.log('aqui context')
             if(user){         
                 const {displayName, photoURL, uid} = user
-  
+    
                 if(!displayName || !photoURL){
                   throw new Error('Missing information from google')
                 }
@@ -27,14 +31,18 @@ export function AuthContextProvider(props){
                   name: displayName,
                   avatar: photoURL
                 })             
-
-            }   
+    
+            }   else {
+                history.push('/')
+            }
         })
 
         return () => {
             unsubscribre()
         }
-    }, [])
+    }
+
+  
 
 
     const signInWithGoogle = async () => {
@@ -65,7 +73,7 @@ export function AuthContextProvider(props){
     }
 
     return(
-        <AuthContext.Provider value={{user, signInWithGoogle, signOut}}>
+        <AuthContext.Provider value={{user, signInWithGoogle, stillLogged, signOut}}>
             {props.children}
         </AuthContext.Provider>
     )
